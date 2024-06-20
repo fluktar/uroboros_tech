@@ -1,0 +1,56 @@
+@mixin center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+//MEDIA QUERY MIXINS
+/*
+      0-600px - Phone
+      600-900px - Tablet portrait
+      900-1200px - Tablet landscape
+      1200-1800px - Desktop
+      1800px + - Big desktop
+      
+      $breakpoint: 
+      phone, 
+      tab-port, 
+      tab-land, 
+      big-desktop
+      1em = 16px
+      */
+
+// Mixin do obsługi responsywności, który stosuje style dla określonych breakpointów.
+@mixin respond($breakpoint) {
+  // Warunek dla breakpointu "phone"
+  @if $breakpoint == "phone" {
+    // Zastosuj style, gdy szerokość ekranu jest większa lub równa 37.5em (600px)
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    }
+  }
+
+  // Warunek dla breakpointu "tab-port"
+  @if $breakpoint == "tab-port" {
+    // Zastosuj style, gdy szerokość ekranu jest większa lub równa 56.25em (900px)
+    @media only screen and (min-width: 56.25em) {
+      @content;
+    }
+  }
+
+  // Warunek dla breakpointu "tab-land"
+  @if $breakpoint == "tab-land" {
+    // Zastosuj style, gdy szerokość ekranu jest większa lub równa 75em (1200px)
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+
+  // Warunek dla breakpointu "big-desktop"
+  @if $breakpoint == "big-desktop" {
+    // Zastosuj style, gdy szerokość ekranu jest większa lub równa 112.5em (1800px)
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" xml:space="preserve">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+        <g>
+            <path  d="M32,4L4,24v36h18V44h20v16h18V24L32,4z M34,36H30v4h4V36z M40,36h-4v4h4V36z M46,36h-4v4h4V36z M28,36h-4v4h4V36z M22,36h-4v4h4V36z M16,36h-4v4h4V36z M52,36h-4v4h4V36z M30,26v4h4v-4H30z M30,30h4v4h-4V30z M40,26h-4v4h4V26z M46,26h-4v4h4V26z M34,26h-4v4h4V26z M22,26h-4v4h4V26z M16,26h-4v4h4V26z M10,26H6v4h4V26z M52,26h-4v4h4V26z M24,44H12v12H8V25.3L32,8.7 l24,16.6V56h-4V44H24z M46,48v12h-4V48H46z M36,48v12h-8V48H36z M22,48v12h-4V48H22z"></path>
+        </g>
+    </g>
+</svg>

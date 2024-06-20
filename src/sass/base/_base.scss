@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+
+$primary-color: #2c3e50; // ciemny niebieski
+$secondary-color: #3498db; // jasny niebieski
+$accent-color: #e74c3c; // czerwony akcent
+$background-color: #ecf0f1; // jasny szary
+$text-color: #2c3e50; // ciemny niebieski (do tekstu)
+
+$light-gray: #bdc3c7; // jasny szary
+$dark-gray: #7f8c8d; // ciemny szary
+$success-color: #2ecc71; // zielony (dla komunikatów sukcesu)
+$warning-color: #f1c40f; // żółty (dla ostrzeżeń)
+$error-color: #e74c3c; // czerwony (dla błędów)
+
+html {
+  // Ustawienie bazowego rozmiaru czcionki na 62.5% (10px przy standardowym 16px, co odpowiada 1rem = 10px)
+  font-size: 62.5%;
+
+  // Użycie mixinu "respond" dla breakpointu "phone"
+  @include respond("phone") {
+    // Zwiększenie rozmiaru czcionki do 75% (12px przy standardowym 16px, co odpowiada 1rem = 12px)
+    font-size: 75%;
+  }
+
+  // Użycie mixinu "respond" dla breakpointu "tab-port"
+  @include respond("tab-port") {
+    // Zwiększenie rozmiaru czcionki do 100% (16px przy standardowym 16px, co odpowiada 1rem = 16px)
+    font-size: 100%;
+  }
+
+  // Użycie mixinu "respond" dla breakpointu "tab-land"
+  @include respond("tab-land") {
+    // Zwiększenie rozmiaru czcionki do 125% (20px przy standardowym 16px, co odpowiada 1rem = 20px)
+    font-size: 125%;
+  }
+
+  // Użycie mixinu "respond" dla breakpointu "big-desktop"
+  @include respond("big-desktop") {
+    // Zwiększenie rozmiaru czcionki do 150% (24px przy standardowym 16px, co odpowiada 1rem = 24px)
+    font-size: 150%;
+  }
+}
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,45 @@
+.header {
+  background-color: $primary-color;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba($secondary-color, 0.5),
+      rgba($primary-color, 0.8)
+    ),
+    url("/dist/img/2decd22f-f234-4c1c-aa54-c79600573386.webp");
+  background-position: center;
+  background-size: cover;
+
+  .logo-slogan {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 0;
+    @include respond("tab-port") {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+      // img {
+      //   width: 100px;
+      //   height: 100px;
+      //   fill: #fff;
+      // }
+      svg {
+        width: calc(250px + (350 - 150) * ((100vw - 425px) / (2560 - 425)));
+        height: calc(250px + (350 - 150) * ((100vw - 425px) / (2560 - 425)));
+        path {
+          fill: $secondary-color;
+        }
+      }
+    }
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: $secondary-color;
+    }
+  }
+}

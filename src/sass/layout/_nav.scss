@@ -1,0 +1,223 @@
+nav {
+  margin-top: 1rem;
+  display: grid;
+  @include respond("tab-port") {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    li {
+      margin-bottom: 1rem;
+      justify-self: center;
+      margin: 1rem 1.5rem;
+      // a {
+      //   color: $primary-color;
+      //   text-decoration: none;
+      //   font-size: 1.6rem;
+      //   border-bottom: 1px solid transparent;
+      //   position: relative;
+      //   transition: all 0.3s ease;
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     width: 0;
+      //     height: 1px;
+      //     background: $primary-color;
+      //     bottom: 0;
+      //     left: 0;
+      //     transition: width 0.3s ease;
+      //   }
+      //   &:hover::after {
+      //     width: 100%;
+      //   }
+      // }
+
+      a {
+        letter-spacing: 1.2px;
+        color: $primary-color;
+        text-decoration: none;
+        font-size: 1.6rem;
+        position: relative;
+        padding: 1rem 1.5rem;
+        transition: color 0.3s ease; // Opóźnienie zmiany koloru tekstu do momentu zakończenia animacji ramki
+        z-index: 1; // Ustawienie tekstu na warstwę wierzchnią
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background: $primary-color;
+          transition: all 0.3s ease;
+          z-index: -1; // Ustawienie pseudoelementów na tło
+        }
+
+        &::before {
+          top: 0;
+          left: 0;
+        }
+
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
+
+        &:hover::before {
+          width: 100%; // Zwiększenie szerokości linii do pełnej szerokości elementu
+          transition: width 0.3s ease, height 0.3s ease 0.3s;
+        }
+
+        &:hover::after {
+          width: 100%; // Zwiększenie szerokości linii do pełnej szerokości elementu
+          transition: width 0.3s ease 0.3s, height 0.3s ease 0.6s;
+        }
+
+        &:hover::before {
+          height: 100%; // Zwiększenie wysokości linii do pełnej wysokości elementu
+          transition: height 0.3s ease 0.6s;
+        }
+
+        &:hover::after {
+          height: 100%; // Zwiększenie wysokości linii do pełnej wysokości elementu
+          transition: height 0.3s ease 0.9s;
+        }
+
+        &:hover {
+          color: $light-gray; // Zmiana koloru tekstu na $light-gray
+        }
+      }
+    }
+
+    @include respond("tab-land") {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        margin-bottom: 0;
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.center {
+  width: 100%;
+  height: 100%;
+
+  align-items: flex-start;
+  justify-content: center;
+  display: none;
+
+  @include respond("tab-port") {
+    display: flex;
+  }
+
+  .menu {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .item {
+      width: fit-content;
+      position: relative;
+      font-family: poppins;
+
+      .item-title,
+      .title {
+        font-size: 2rem;
+        color: $secondary-color;
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+        }
+      }
+      .item-title {
+        padding: 1rem 2.5rem;
+      }
+      .item-title::before {
+        display: none;
+        position: absolute;
+        content: "play_arrow";
+        font-family: "Material Icons Round";
+        color: white;
+        top: 2.5rem;
+        left: 50%;
+        transform: translate(-50%, 0) rotate(-90deg);
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+
+  height: fit-content;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 1mm;
+  padding: 5px 0;
+  z-index: 100;
+}
+.item:nth-child(-n + 2) .submenu {
+  left: 0;
+}
+.item:nth-child(n + 3) .submenu {
+  right: 0;
+}
+.submenu .title {
+  color: black;
+}
+.sub-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  margin: 15px 0;
+  cursor: pointer;
+}
+.sub-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.sub-item span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  color: $secondary-color;
+}
+.desc {
+  font-size: 12px;
+  color: rgb(160, 160, 160);
+}
+.item:hover .item-title::before {
+  display: block;
+}
+.item:hover .submenu {
+  display: block;
+}
+.item:hover .item-title {
+  color: white;
+}
