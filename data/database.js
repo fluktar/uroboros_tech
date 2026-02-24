@@ -17,7 +17,7 @@ let database;
 async function connect() {
   try {
     const client = await MongoClient.connect(
-      `mongodb://admin:${pas}@localhost:27017/?authSource=admin`,
+      `mongodb://admin:${pas}@127.0.0.1:27017/?authSource=admin`,
 
       {
         // Removed deprecated options
